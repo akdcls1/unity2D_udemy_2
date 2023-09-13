@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a35c5bcc11ea5b4282f097210528382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steerSpeed: 0.1
+  steerSpeed: 0.5
   moveSpeed: 0.01
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
