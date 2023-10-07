@@ -5,9 +5,11 @@ using UnityEngine;
 public class Driver : MonoBehaviour
 {
     // unity 상에서 제어가능 추가 -> SerializeField
-    [SerializeField] float steerSpeed = 0.1f;
+    [SerializeField] float steerSpeed = 1f;
 
-    [SerializeField] float moveSpeed = 0.01f;
+    [SerializeField] float moveSpeed = 20f;
+    [SerializeField] float slowSpeed = 15f;
+    [SerializeField] float boostSpeed = 30f;
 
     void Start() // 시작 시에만 적용 시 스타트에 소스 추가
     {
@@ -22,5 +24,13 @@ public class Driver : MonoBehaviour
         // transform 으로 돌거나(Rotate) 속도(Translate)변경 가능
         transform.Rotate(0, 0, -steerAmount);
         transform.Translate(0, moveAmount, 0);
+    }
+
+    void OnTriggerEnter2D(Collider2D other) 
+    {
+        if (other.tag == "Boost")
+        {
+            moveSpeed = boostSpeed;
+        }
     }
 }
